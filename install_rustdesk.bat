@@ -119,13 +119,13 @@ goto START
 :::BeginText
 
 param(
-    [Parameter(Mandatory)]
+    [Parameter(Mandatory=$true)]
     [string]$Url,
 
-    [Parameter(Mandatory)]
+    [Parameter(Mandatory=$true)]
     [string]$Server,
 
-    [Parameter(Mandatory)]
+    [Parameter(Mandatory=$true)]
     [string]$Key,
 
     [switch]$UsePermanentPassword,
