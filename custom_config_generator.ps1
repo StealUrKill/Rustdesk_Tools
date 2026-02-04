@@ -1,8 +1,11 @@
-$rdhost = Read-Host "Enter RustDesk host (example: yourdomain.com)"
 Write-Host ""
-$rdkey  = Read-Host "Enter RustDesk key"
+Write-Host "Starting Rustdesk config generator..."
 Write-Host ""
-$rdapi  = Read-Host "Enter RustDesk API (example: https://yourdomain.com)"
+$rdhost = Read-Host "Enter Rustdesk host (example: yourdomain.com)"
+Write-Host ""
+$rdkey  = Read-Host "Enter Rustdesk key"
+Write-Host ""
+$rdapi  = Read-Host "Enter Rustdesk API (example: https://yourdomain.com)"
 
 
 $json = '{"host":"' + $rdhost + '","key":"' + $rdkey + '","api":"' + $rdapi + '"}'
@@ -47,6 +50,7 @@ if ($apply -match '^(y|yes)$') {
 	$rdExe = "C:\Program Files\RustDesk\rustdesk.exe"
 
 	if (Test-Path $rdExe) {
+		Write-Host ""
 		Write-Host "Applying config to Rustdesk..."
 		& $rdExe --config $code
 	}
@@ -59,10 +63,12 @@ if ($apply -match '^(y|yes)$') {
 		$customExe = Read-Host "Enter the full path to the Rustdesk executable or press Enter to cancel"
 
 		if ($customExe -and (Test-Path $customExe)) {
+			Write-Host ""
 			Write-Host "Applying config using custom executable for pro users"
 			& $customExe --config $code
 		}
 		else {
+			Write-Host ""
 			Write-Host "No valid executable provided. Skipping apply."
 		}
 	}
