@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Background -->
+  <circle cx="256" cy="256" r="240" fill="#0a0a0f"/>
+  <circle cx="256" cy="256" r="200" fill="url(#glass)" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.4"/>
+
+  <!-- Subtle inner glow ring -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#3b82f6" stroke-width="0.5" stroke-opacity="0.15"/>
+
+  <!-- RD text -->
+  <text x="256" y="256" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-weight="700" font-size="180" fill="#3b82f6" text-anchor="middle" dy="0.35em" letter-spacing="-8">RD</text>
+
+  <!-- Glass highlight text (offset up slightly for depth) -->
+  <text x="256" y="250" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-weight="700" font-size="180" fill="white" fill-opacity="0.06" text-anchor="middle" dy="0.35em" letter-spacing="-8">RD</text>
+
+  <!-- Top arc flare -->
+  <path d="M140,120 Q256,70 372,120" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.25" fill="none"/>
+
+  <defs>
+    <radialGradient id="glass" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0a0a0f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -1,0 +1,271 @@
+{
+  "Devices": {
+    "script": "devices.py",
+    "subcommands": {
+      "view": [
+        ["--id", "Device ID", "text"],
+        ["--device_name", "Device Name", "text"],
+        ["--user_name", "User Name", "text"],
+        ["--group_name", "Group Name", "text"],
+        ["--device_group_name", "Device Group Name", "text"],
+        ["--offline_days", "Offline Days", "int"]
+      ],
+      "disable": [["--id", "Device ID", "text"]],
+      "enable": [["--id", "Device ID", "text"]],
+      "delete": [["--id", "Device ID", "text"]],
+      "assign": [
+        ["--id", "Device ID", "text"],
+        ["--assign_to", "Assign To (type=value)", "text"]
+      ]
+    }
+  },
+  "Users": {
+    "script": "users.py",
+    "subcommands": {
+      "view": [
+        ["--name", "User Name", "text"],
+        ["--group_name", "Group Name", "text"]
+      ],
+      "disable": [["--name", "User Name", "text"]],
+      "enable": [["--name", "User Name", "text"]],
+      "delete": [["--name", "User Name", "text"]],
+      "new": [
+        ["--name", "User Name", "text"],
+        ["--password", "Password", "text"],
+        ["--group_name", "Group Name", "text"],
+        ["--note", "Note", "text"]
+      ],
+      "invite": [
+        ["--name", "User Name", "text"],
+        ["--email", "Email", "text"],
+        ["--group_name", "Group Name", "text"],
+        ["--note", "Note", "text"]
+      ],
+      "enable-2fa-enforce": [["--name", "User Name", "text"], ["--web-console-url", "Web Console URL", "text"]],
+      "disable-2fa-enforce": [["--name", "User Name", "text"], ["--web-console-url", "Web Console URL", "text"]],
+      "disable-email-verification": [["--name", "User Name", "text"]],
+      "reset-2fa": [["--name", "User Name", "text"]],
+      "force-logout": [["--name", "User Name", "text"]]
+    }
+  },
+  "User Groups": {
+    "script": "user_groups.py",
+    "subcommands": {
+      "view": [
+        ["--name", "Group Name", "text"]
+      ],
+      "add": [
+        ["--name", "Group Name", "text"],
+        ["--note", "Note", "text"],
+        ["--accessed-from", "Accessed From (JSON)", "text"],
+        ["--access-to", "Access To (JSON)", "text"]
+      ],
+      "update": [
+        ["--name", "Group Name", "text"],
+        ["--new-name", "New Name", "text"],
+        ["--note", "Note", "text"],
+        ["--accessed-from", "Accessed From (JSON)", "text"],
+        ["--access-to", "Access To (JSON)", "text"]
+      ],
+      "delete": [["--name", "Group Name", "text"]],
+      "view-users": [
+        ["--name", "Group Name", "text"],
+        ["--user-name", "User Name Filter", "text"]
+      ],
+      "add-users": [
+        ["--name", "Group Name", "text"],
+        ["--users", "Users (comma-separated)", "text"]
+      ]
+    }
+  },
+  "Device Groups": {
+    "script": "device_groups.py",
+    "subcommands": {
+      "view": [["--name", "Group Name", "text"]],
+      "add": [
+        ["--name", "Group Name", "text"],
+        ["--note", "Note", "text"],
+        ["--accessed-from", "Accessed From (JSON)", "text"]
+      ],
+      "update": [
+        ["--name", "Group Name", "text"],
+        ["--new-name", "New Name", "text"],
+        ["--note", "Note", "text"],
+        ["--accessed-from", "Accessed From (JSON)", "text"]
+      ],
+      "delete": [["--name", "Group Name", "text"]],
+      "view-devices": [
+        ["--name", "Group Name", "text"],
+        ["--id", "Device ID", "text"],
+        ["--device-name", "Device Name", "text"],
+        ["--user-name", "User Name", "text"],
+        ["--device-username", "Device Username", "text"]
+      ],
+      "add-devices": [
+        ["--name", "Group Name", "text"],
+        ["--ids", "Device IDs (comma-separated)", "text"]
+      ],
+      "remove-devices": [
+        ["--name", "Group Name", "text"],
+        ["--ids", "Device IDs (comma-separated)", "text"]
+      ]
+    }
+  },
+  "Address Book": {
+    "script": "ab.py",
+    "subcommands": {
+      "get-personal-ab": [],
+      "view-ab": [["--ab-name", "AB Name", "text"]],
+      "add-ab": [
+        ["--ab-name", "AB Name", "text"],
+        ["--note", "Note", "text"],
+        ["--password", "Password", "text"],
+        ["--owner", "Owner", "text"]
+      ],
+      "update-ab": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"],
+        ["--ab-update-name", "New AB Name", "text"],
+        ["--note", "Note", "text"],
+        ["--owner", "Owner", "text"]
+      ],
+      "delete-ab": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"]
+      ],
+      "view-peer": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"],
+        ["--peer-id", "Peer ID", "text"],
+        ["--alias", "Alias", "text"]
+      ],
+      "add-peer": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"],
+        ["--peer-id", "Peer ID", "text"],
+        ["--alias", "Alias", "text"],
+        ["--tags", "Tags", "text"],
+        ["--password", "Password", "text"]
+      ],
+      "update-peer": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"],
+        ["--peer-id", "Peer ID", "text"],
+        ["--alias", "Alias", "text"],
+        ["--tags", "Tags", "text"],
+        ["--password", "Password", "text"],
+        ["--note", "Note", "text"]
+      ],
+      "delete-peer": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"],
+        ["--peer-id", "Peer ID", "text"]
+      ],
+      "view-tag": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"]
+      ],
+      "add-tag": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"],
+        ["--tag-name", "Tag Name", "text"],
+        ["--tag-color", "Tag Color", "text"]
+      ],
+      "update-tag": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"],
+        ["--tag-name", "Tag Name", "text"],
+        ["--tag-color", "Tag Color", "text"]
+      ],
+      "delete-tag": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"],
+        ["--tag-name", "Tag Name", "text"]
+      ],
+      "view-rule": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"]
+      ],
+      "add-rule": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"],
+        ["--rule-type", "Rule Type", "choice:user,group,everyone"],
+        ["--rule-user", "Rule User", "text"],
+        ["--rule-group", "Rule Group", "text"],
+        ["--rule-permission", "Permission", "choice:ro,rw,full"]
+      ],
+      "update-rule": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"],
+        ["--rule-guid", "Rule GUID", "text"],
+        ["--rule-type", "Rule Type", "choice:user,group,everyone"],
+        ["--rule-user", "Rule User", "text"],
+        ["--rule-group", "Rule Group", "text"],
+        ["--rule-permission", "Permission", "choice:ro,rw,full"]
+      ],
+      "delete-rule": [
+        ["--ab-name", "AB Name", "text"],
+        ["--ab-guid", "AB GUID", "text"],
+        ["--rule-guid", "Rule GUID", "text"]
+      ]
+    }
+  },
+  "Strategies": {
+    "script": "strategies.py",
+    "subcommands": {
+      "list": [],
+      "view": [
+        ["--name", "Strategy Name", "text"],
+        ["--guid", "Strategy GUID", "text"]
+      ],
+      "enable": [["--name", "Strategy Name", "text"]],
+      "disable": [["--name", "Strategy Name", "text"]],
+      "assign": [
+        ["--name", "Strategy Name", "text"],
+        ["--peers", "Peers (comma-separated)", "text"],
+        ["--users", "Users (comma-separated)", "text"],
+        ["--device-groups", "Device Groups (comma-separated)", "text"]
+      ],
+      "unassign": [
+        ["--name", "Strategy Name", "text"],
+        ["--peers", "Peers (comma-separated)", "text"],
+        ["--users", "Users (comma-separated)", "text"],
+        ["--device-groups", "Device Groups (comma-separated)", "text"]
+      ]
+    }
+  },
+  "Audits": {
+    "script": "audits.py",
+    "subcommands": {
+      "view-conn": [
+        ["--page-size", "Page Size", "int"],
+        ["--current", "Page Number", "int"],
+        ["--created-at", "Created At", "text"],
+        ["--days-ago", "Days Ago", "int"],
+        ["--remote", "Remote Peer ID", "text"],
+        ["--conn-type", "Connection Type", "choice:0 - Remote Desktop,1 - File Transfer,2 - Port Transfer,3 - View Camera,4 - Terminal"]
+      ],
+      "view-file": [
+        ["--page-size", "Page Size", "int"],
+        ["--current", "Page Number", "int"],
+        ["--created-at", "Created At", "text"],
+        ["--days-ago", "Days Ago", "int"],
+        ["--remote", "Remote Peer ID", "text"]
+      ],
+      "view-alarm": [
+        ["--page-size", "Page Size", "int"],
+        ["--current", "Page Number", "int"],
+        ["--created-at", "Created At", "text"],
+        ["--days-ago", "Days Ago", "int"],
+        ["--device", "Device ID", "text"]
+      ],
+      "view-console": [
+        ["--page-size", "Page Size", "int"],
+        ["--current", "Page Number", "int"],
+        ["--created-at", "Created At", "text"],
+        ["--days-ago", "Days Ago", "int"],
+        ["--operator", "Operator", "text"]
+      ]
+    }
+  }
+}
